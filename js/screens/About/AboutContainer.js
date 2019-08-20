@@ -6,19 +6,23 @@ import {Text, View} from 'react-native';
 import Loader from '../../components/Loader';
 import styles from './styles';
 
+const ALL_CONDUCTS = gql`
+  {
+    allConducts {
+      id
+      description
+      title
+    }
+  }
+`;
+
 export default class AboutContainer extends Component {
+  static navigationOptions = {
+    title: 'About',
+  };
   render() {
     return (
-      <Query
-        query={gql`
-          {
-            allConducts {
-              id
-              description
-              title
-            }
-          }
-        `}>
+      <Query query={ALL_CONDUCTS}>
         {({loading, error, data}) => {
           if (loading) {
             return (
