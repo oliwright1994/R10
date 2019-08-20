@@ -1,12 +1,11 @@
 import React from 'react';
-import {Text, View, FlatList, Image} from 'react-native';
+import {Text, ScrollView, FlatList, Image} from 'react-native';
 import ConductCard from '../../components/ConductCard';
 import styles from './styles';
 
 const About = ({allConducts}) => {
-  console.log(allConducts);
   return (
-    <View style={styles.root}>
+    <ScrollView style={styles.root}>
       <Text style={styles.descriptionText}>
         R10 is a conference that focuses on just about any topic related to dev.
       </Text>
@@ -21,7 +20,7 @@ const About = ({allConducts}) => {
         data={allConducts}
         renderItem={({item}) => <ConductCard conduct={item} />}
       />
-    </View>
+    </ScrollView>
   );
 };
 

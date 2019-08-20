@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import theme from '../../config/theme.js';
 
 const styles = StyleSheet.create({
   loader: {

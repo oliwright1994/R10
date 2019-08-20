@@ -2,15 +2,15 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   root: {
-    padding: 10,
+    padding: 15,
   },
   heading: {
-    fontSize: 24,
+    fontSize: 28,
     marginTop: 10,
     marginBottom: 10,
   },
   descriptionText: {
-    fontSize: 16,
+    fontSize: 18,
     marginTop: 10,
     marginBottom: 10,
   },
