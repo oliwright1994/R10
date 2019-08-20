@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import theme from '../../config/theme';
 
 const styles = StyleSheet.create({
   root: {
@@ -9,13 +10,13 @@ const styles = StyleSheet.create({
     fontSize: 28,
     marginTop: 10,
     marginBottom: 10,
-    fontFamily: 'Montserrat',
+    fontFamily: theme.fonts.regular,
   },
   descriptionText: {
     fontSize: 18,
     marginTop: 10,
     marginBottom: 10,
-    fontFamily: 'Montserrat',
+    fontFamily: theme.fonts.regular,
   },
   loaderWrapper: {
     height: '100%',
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
     padding: 30,
     marginBottom: 20,
     alignItems: 'center',
-    borderBottomColor: '#999999',
+    borderBottomColor: theme.pallete.mediumGray,
     borderBottomWidth: 1,
   },
 });
