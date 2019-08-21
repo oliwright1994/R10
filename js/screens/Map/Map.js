@@ -7,11 +7,10 @@ import theme from '../../config/theme';
 const Maps = () => {
   return (
     <MapView
-      provider={PROVIDER_GOOGLE}
       style={styles.map}
       region={{
-        latitude: 49.2696213,
-        longitude: -123.1280862,
+        latitude: 49.26326812868976,
+        longitude: -123.13764485095908,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       }}
@@ -19,8 +18,8 @@ const Maps = () => {
       <Marker
         pinColor={theme.pallete.red}
         coordinate={{
-          latitude: 49.2696213,
-          longitude: -123.1280862,
+          latitude: 49.26326812868976,
+          longitude: -123.13764485095908,
         }}
         title={'R10'}
       />
