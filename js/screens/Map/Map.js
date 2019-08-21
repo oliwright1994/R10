@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './styles';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+
 import theme from '../../config/theme';
 
 const Maps = () => {
   return (
     <MapView
+      provider={PROVIDER_GOOGLE}
       style={styles.map}
       region={{
         latitude: 49.2696213,
@@ -15,7 +17,6 @@ const Maps = () => {
       }}
       showsUserLocation={false}>
       <Marker
-        // icon=
         pinColor={theme.pallete.red}
         coordinate={{
           latitude: 49.2696213,
