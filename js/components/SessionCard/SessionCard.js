@@ -1,9 +1,12 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import {TouchableOpacity, Text, View} from 'react-native';
 import styles from './styles';
 import {withNavigation} from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const SessionCard = ({item, navigation}) => {
+  let IconComponent = Ionicons;
+
   return (
     <TouchableOpacity
       opacity={0.6}
@@ -11,7 +14,12 @@ const SessionCard = ({item, navigation}) => {
         navigation.navigate('Session', {item});
       }}>
       <Text style={styles.title}>{item.title}</Text>
-      <Text style={styles.location}>{item.location}</Text>
+      <View style={styles.botText}>
+        <Text style={styles.location}>{item.location}</Text>
+        {item.fave ? (
+          <IconComponent name="md-heart" size={18} style={styles.faveIcon} />
+        ) : null}
+      </View>
     </TouchableOpacity>
   );
 };

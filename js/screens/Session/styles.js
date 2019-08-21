@@ -58,6 +58,16 @@ const styles = StyleSheet.create({
   buttonWrapper: {
     borderColor: theme.pallete.lightGray,
     borderTopWidth: 1,
+    alignItems: 'center',
+  },
+  faveIcon: {
+    color: theme.pallete.red,
+  },
+  topText: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingRight: 10,
+    alignItems: 'center',
   },
 });
 

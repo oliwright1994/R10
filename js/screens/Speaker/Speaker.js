@@ -8,7 +8,9 @@ import {
   TouchableOpacity,
   Image,
   SafeAreaView,
+  Linking,
 } from 'react-native';
+import FaveButton from '../../components/FaveButton';
 
 const Speaker = ({navigation}) => {
   const speaker = navigation.getParam('speaker');
@@ -29,6 +31,10 @@ const Speaker = ({navigation}) => {
         <Image style={styles.speakerPicture} source={{uri: speaker.image}} />
         <Text style={styles.speakerName}>{speaker.name}</Text>
         <Text style={styles.speakerBio}>{speaker.bio}</Text>
+        <FaveButton
+          text="Read more on Wikipedia"
+          onPress={() => Linking.openURL(speaker.url)}
+        />
       </ScrollView>
     </SafeAreaView>
   );

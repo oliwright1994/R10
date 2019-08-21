@@ -5,6 +5,7 @@ import SessionCard from '../../components/SessionCard';
 import {withNavigation} from 'react-navigation';
 
 const Schedule = ({sessions, navigation}) => {
+  console.log(sessions);
   return (
     <SectionList
       renderItem={({item, index}) => (

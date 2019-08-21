@@ -7,6 +7,6 @@ export default class MapsContainer extends Component {
     title: 'Map',
   };
   render() {
-    return <Text>Map screen</Text>;
+    return <Maps />;
   }
 }

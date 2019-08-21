@@ -5,7 +5,6 @@ import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';
 import FavesScreen from '../screens/Faves';
 import SessionScreen from '../screens/Session';
-import SpeakerScreen from '../screens/Speaker';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {sharedNavigationOptions} from './config';
 

@@ -2,12 +2,26 @@ import React from 'react';
 import styles from './styles';
 import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import {withNavigation} from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import FaveButton from '../../components/FaveButton';
 
-const Session = ({session, speaker, navigation}) => {
+const Session = ({
+  session,
+  speaker,
+  navigation,
+  addFaveSession,
+  removeFaveSession,
+}) => {
+  let IconComponent = Ionicons;
   return (
     <ScrollView style={styles.root}>
       <View style={styles.sessionWrapper}>
-        <Text style={styles.location}>{session.location}</Text>
+        <View style={styles.topText}>
+          <Text style={styles.location}>{session.location}</Text>
+          {session.fave ? (
+            <IconComponent name="md-heart" size={18} style={styles.faveIcon} />
+          ) : null}
+        </View>
         <Text style={styles.title}>{session.title}</Text>
         <Text style={styles.time}>
           {new Date(session.startTime).toLocaleTimeString('en-US', {
@@ -17,18 +31,37 @@ const Session = ({session, speaker, navigation}) => {
           })}
         </Text>
         <Text style={styles.description}>{session.description}</Text>
-        <Text style={styles.presentedText}>Presented By:</Text>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Speaker', {speaker});
-          }}
-          opacity={0.6}
-          style={styles.speakerWrapper}>
-          <Image style={styles.speakerPicture} source={{uri: speaker.image}} />
-          <Text style={styles.speakerName}>{speaker.name}</Text>
-        </TouchableOpacity>
+        {speaker ? (
+          <View>
+            <Text style={styles.presentedText}>Presented By:</Text>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Speaker', {speaker});
+              }}
+              opacity={0.6}
+              style={styles.speakerWrapper}>
+              <Image
+                style={styles.speakerPicture}
+                source={{uri: speaker.image}}
+              />
+              <Text style={styles.speakerName}>{speaker.name}</Text>
+            </TouchableOpacity>
+          </View>
+        ) : null}
       </View>
-      <View style={styles.buttonWrapper} />
+      <View style={styles.buttonWrapper}>
+        {session.fave ? (
+          <FaveButton
+            text="Remove from faves"
+            onPress={() => removeFaveSession(session.id)}
+          />
+        ) : (
+          <FaveButton
+            text="Add to fave sessions"
+            onPress={() => addFaveSession(session.id)}
+          />
+        )}
+      </View>
     </ScrollView>
   );
 };

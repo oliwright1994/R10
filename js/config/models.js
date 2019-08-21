@@ -1,4 +1,4 @@
-import {AsyncStorage} from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export const createFave = async faveId => {
   try {
@@ -7,7 +7,7 @@ export const createFave = async faveId => {
       JSON.stringify({id: faveId, faved_on: new Date()}),
     );
   } catch (error) {
-    return false;
+    return error;
   }
 };
 

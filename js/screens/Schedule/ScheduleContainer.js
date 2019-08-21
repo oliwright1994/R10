@@ -7,6 +7,7 @@ import formatSessionData from '../../lib/helpers/formatSessionData';
 import Loader from '../../components/Loader';
 import styles from './styles';
 import {withNavigation} from 'react-navigation';
+import FavesContext from '../../context/FavesContext';
 
 const ALL_SESSIONS = gql`
   {
@@ -28,22 +29,29 @@ class ScheduleContainer extends Component {
   };
   render() {
     return (
-      <Query query={ALL_SESSIONS}>
-        {({loading, error, data}) => {
-          if (loading) {
-            return <Loader />;
-          }
-          if (error) {
-            return <Text>{error}</Text>;
-          }
-          return (
-            <Schedule
-              navigation={this.props.navigation}
-              sessions={formatSessionData(data.allSessions)}
-            />
-          );
-        }}
-      </Query>
+      <FavesContext.Consumer>
+        {({faveIds}) => (
+          <Query query={ALL_SESSIONS}>
+            {({loading, error, data}) => {
+              if (loading) {
+                return <Loader />;
+              }
+              if (error) {
+                return <Text>{error}</Text>;
+              }
+              data.allSessions.forEach(session => {
+                session.fave = faveIds.includes(session.id);
+              });
+              return (
+                <Schedule
+                  navigation={this.props.navigation}
+                  sessions={formatSessionData(data.allSessions)}
+                />
+              );
+            }}
+          </Query>
+        )}
+      </FavesContext.Consumer>
     );
   }
 }

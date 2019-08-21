@@ -12,7 +12,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: theme.pallete.mediumGray,
     paddingBottom: 10,
+  },
+  faveIcon: {
+    color: theme.pallete.red,
+  },
+  botText: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
     paddingLeft: 10,
+    paddingRight: 20,
   },
 });
 
