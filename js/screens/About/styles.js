@@ -18,17 +18,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     fontFamily: theme.fonts.regular,
   },
-  loaderWrapper: {
-    height: '100%',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   logoWrapper: {
     padding: 30,
     marginBottom: 20,
     alignItems: 'center',
-    borderBottomColor: theme.pallete.mediumGray,
+    borderBottomColor: theme.pallete.lightGray,
     borderBottomWidth: 1,
   },
 });

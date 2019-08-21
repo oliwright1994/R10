@@ -1,18 +1,14 @@
 import React from 'react';
 import styles from './styles';
-import {ScrollView, Text, SectionList, View} from 'react-native';
+import {Text, SectionList, View} from 'react-native';
+import SessionCard from '../../components/SessionCard';
+import {withNavigation} from 'react-navigation';
 
-const Schedule = ({sessions}) => {
-  console.log(sessions);
+const Schedule = ({sessions, navigation}) => {
   return (
     <SectionList
       renderItem={({item, index}) => (
-        <View>
-          <Text style={styles.title} key={index}>
-            {item.title}
-          </Text>
-          <Text style={styles.location}>{item.location}</Text>
-        </View>
+        <SessionCard item={item} index={index} navigation={navigation} />
       )}
       renderSectionHeader={({section: {title}}) => (
         <Text style={styles.heading}>
@@ -30,4 +26,4 @@ const Schedule = ({sessions}) => {
   );
 };
 
-export default Schedule;
+export default withNavigation(Schedule);

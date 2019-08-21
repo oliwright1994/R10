@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import Speaker from './Speaker';
-import {Text} from 'react-native';
 
-export default class SpeakerContainer extends Component {
+class SpeakerContainer extends Component {
   render() {
-    return <Text>Speaker</Text>;
+    return <Speaker />;
   }
 }
+
+export default SpeakerContainer;

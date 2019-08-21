@@ -10,6 +10,7 @@
   "dependencies": {
     "@apollo/react-components": "^3.0.1",
     "@apollo/react-hooks": "^3.0.1",
+    "@react-native-community/async-storage": "^1.6.1",
     "@types/react": "^16.8.0",
     "apollo-boost": "^0.4.4",
     "apollo-client": "^2.6.4",

@@ -7,7 +7,7 @@ const theme = {
     red: '#cf392a',
   },
   fonts: {
-    light: 'Montserrat Light',
+    light: 'Montserrat-Light',
     regular: 'Montserrat',
   },
 };

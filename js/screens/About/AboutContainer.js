@@ -25,11 +25,7 @@ export default class AboutContainer extends Component {
       <Query query={ALL_CONDUCTS}>
         {({loading, error, data}) => {
           if (loading) {
-            return (
-              <View style={styles.loaderWrapper}>
-                <Loader />
-              </View>
-            );
+            return <Loader />;
           }
           if (error) {
             return <Text>{error}</Text>;

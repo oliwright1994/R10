@@ -18,6 +18,7 @@ const GradientHeader = props => (
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
   header: props => <GradientHeader {...props} />,
+  headerTintColor: 'white',
   headerStyle: {
     backgroundColor: 'transparent',
   },

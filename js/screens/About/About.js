@@ -1,9 +1,10 @@
 import React from 'react';
-import {Text, ScrollView, FlatList, Image, View} from 'react-native';
+import {Text, ScrollView, Image, View} from 'react-native';
 import ConductCard from '../../components/ConductCard';
 import styles from './styles';
 
 const About = ({allConducts}) => {
+  console.log(allConducts);
   return (
     <ScrollView style={styles.root}>
       <View style={styles.logoWrapper}>
@@ -19,10 +20,9 @@ const About = ({allConducts}) => {
         Vancouver, BC.
       </Text>
       <Text style={styles.heading}>Code of Conduct</Text>
-      <FlatList
-        data={allConducts}
-        renderItem={({item}) => <ConductCard conduct={item} />}
-      />
+      {allConducts.map(conduct => {
+        return <ConductCard conduct={conduct} key={conduct.id} />;
+      })}
     </ScrollView>
   );
 };

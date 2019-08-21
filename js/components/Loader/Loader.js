@@ -4,7 +4,9 @@ import React from 'react';
 
 const Loader = () => {
   return (
-    <ActivityIndicator color="#cf392a" style={styles.loader} size="large" />
+    <View style={styles.loaderWrapper}>
+      <ActivityIndicator color="#cf392a" style={styles.loader} size="large" />
+    </View>
   );
 };
 

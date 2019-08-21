@@ -6,6 +6,7 @@ import {gql} from 'apollo-boost';
 import formatSessionData from '../../lib/helpers/formatSessionData';
 import Loader from '../../components/Loader';
 import styles from './styles';
+import {withNavigation} from 'react-navigation';
 
 const ALL_SESSIONS = gql`
   {
@@ -15,14 +16,13 @@ const ALL_SESSIONS = gql`
       location
       speaker {
         id
-        url
       }
       startTime
       title
     }
   }
 `;
-export default class ScheduleContainer extends Component {
+class ScheduleContainer extends Component {
   static navigationOptions = {
     title: 'Schedule',
   };
@@ -31,18 +31,21 @@ export default class ScheduleContainer extends Component {
       <Query query={ALL_SESSIONS}>
         {({loading, error, data}) => {
           if (loading) {
-            return (
-              <View style={styles.loaderWrapper}>
-                <Loader />
-              </View>
-            );
+            return <Loader />;
           }
           if (error) {
             return <Text>{error}</Text>;
           }
-          return <Schedule sessions={formatSessionData(data.allSessions)} />;
+          return (
+            <Schedule
+              navigation={this.props.navigation}
+              sessions={formatSessionData(data.allSessions)}
+            />
+          );
         }}
       </Query>
     );
   }
 }
+
+export default withNavigation(ScheduleContainer);
