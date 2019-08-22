@@ -1,6 +1,13 @@
 import React from 'react';
 import styles from './styles';
-import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
+import {
+  Text,
+  View,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 import {withNavigation} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PurpleButton from '../../components/PurpleButton';
@@ -20,7 +27,11 @@ const Session = ({
         <View style={styles.topText}>
           <Text style={styles.location}>{session.location}</Text>
           {faveIds.includes(session.id) ? (
-            <IconComponent name="md-heart" size={18} style={styles.faveIcon} />
+            <IconComponent
+              name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+              size={18}
+              style={styles.faveIcon}
+            />
           ) : null}
         </View>
         <Text style={styles.title}>{session.title}</Text>

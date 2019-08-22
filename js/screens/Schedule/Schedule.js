@@ -3,6 +3,8 @@ import styles from './styles';
 import {Text, SectionList, View} from 'react-native';
 import SessionCard from '../../components/SessionCard';
 import {withNavigation} from 'react-navigation';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 const Schedule = ({sessions, navigation, faveIds}) => {
   console.log(sessions);

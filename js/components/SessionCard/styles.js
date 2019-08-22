@@ -3,12 +3,12 @@ import theme from '../../config/theme';
 
 const styles = StyleSheet.create({
   title: {
-    fontFamily: 'Montserrat',
+    fontFamily: theme.fonts.regular,
     fontSize: 18,
     padding: 10,
   },
   location: {
-    fontFamily: 'Montserrat',
+    fontFamily: theme.fonts.regular,
     fontSize: 16,
     color: theme.pallete.mediumGray,
     paddingBottom: 10,

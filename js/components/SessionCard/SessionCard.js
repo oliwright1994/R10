@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, Text, View} from 'react-native';
+import {TouchableOpacity, Text, View, Platform} from 'react-native';
 import styles from './styles';
 import {withNavigation} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -17,7 +17,11 @@ const SessionCard = ({item, navigation, faveIds}) => {
       <View style={styles.botText}>
         <Text style={styles.location}>{item.location}</Text>
         {faveIds.includes(item.id) ? (
-          <IconComponent name="md-heart" size={18} style={styles.faveIcon} />
+          <IconComponent
+            name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'}
+            size={18}
+            style={styles.faveIcon}
+          />
         ) : null}
       </View>
     </TouchableOpacity>

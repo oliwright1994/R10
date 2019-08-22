@@ -8,7 +8,7 @@ const theme = {
   },
   fonts: {
     light: 'Montserrat-Light',
-    regular: 'Montserrat',
+    regular: 'Montserrat-Regular',
   },
 };
 

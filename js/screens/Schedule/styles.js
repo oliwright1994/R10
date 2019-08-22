@@ -8,17 +8,17 @@ const styles = StyleSheet.create({
   },
   heading: {
     backgroundColor: theme.pallete.lightGray,
-    fontFamily: 'Montserrat',
+    fontFamily: theme.fonts.regular,
     fontSize: 16,
     padding: 10,
   },
   title: {
-    fontFamily: 'Montserrat',
+    fontFamily: theme.fonts.regular,
     fontSize: 18,
     padding: 10,
   },
   location: {
-    fontFamily: 'Montserrat',
+    fontFamily: theme.fonts.regular,
     fontSize: 16,
     color: theme.pallete.mediumGray,
     paddingBottom: 10,

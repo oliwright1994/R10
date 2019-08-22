@@ -7,6 +7,7 @@ import FavesScreen from '../screens/Faves';
 import SessionScreen from '../screens/Session';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {sharedNavigationOptions} from './config';
+import theme from '../config/theme';
 
 const AboutStack = createStackNavigator(
   {
@@ -89,7 +90,7 @@ export default createBottomTabNavigator(
       inactiveTintColor: '#999999',
       labelStyle: {
         fontSize: 12,
-        fontFamily: 'Montserrat',
+        fontFamily: theme.fonts.regular,
       },
       style: {
         backgroundColor: 'black',
