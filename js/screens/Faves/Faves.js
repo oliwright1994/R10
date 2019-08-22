@@ -3,6 +3,7 @@ import styles from './styles';
 import {Text, SectionList, View} from 'react-native';
 import SessionCard from '../../components/SessionCard';
 import {withNavigation} from 'react-navigation';
+import moment from 'moment';
 
 const Faves = ({sessions, navigation, faveIds}) => {
   return (
@@ -17,11 +18,9 @@ const Faves = ({sessions, navigation, faveIds}) => {
       )}
       renderSectionHeader={({section: {title}}) => (
         <Text style={styles.heading}>
-          {new Date(title).toLocaleTimeString('en-US', {
-            hour: 'numeric',
-            minute: 'numeric',
-            hour12: true,
-          })}
+          {moment(title)
+            .format('hh:mm a')
+            .toUpperCase()}
         </Text>
       )}
       sections={sessions}

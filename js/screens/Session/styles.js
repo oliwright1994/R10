@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   speakerPicture: {
-    width: 100,
-    height: 100,
+    width: 75,
+    height: 75,
     borderRadius: 50,
   },
   speakerWrapper: {

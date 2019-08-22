@@ -11,6 +11,7 @@ import {
 import {withNavigation} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PurpleButton from '../../components/PurpleButton';
+import moment from 'moment';
 
 const Session = ({
   session,
@@ -36,11 +37,9 @@ const Session = ({
         </View>
         <Text style={styles.title}>{session.title}</Text>
         <Text style={styles.time}>
-          {new Date(session.startTime).toLocaleTimeString('en-US', {
-            hour: 'numeric',
-            minute: 'numeric',
-            hour12: true,
-          })}
+          {moment(session.startTime)
+            .format('hh:mm a')
+            .toUpperCase()}
         </Text>
         <Text style={styles.description}>{session.description}</Text>
         {speaker ? (
