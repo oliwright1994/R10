@@ -3,7 +3,7 @@ import styles from './styles';
 import {Text, View, ScrollView, Image, TouchableOpacity} from 'react-native';
 import {withNavigation} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import FaveButton from '../../components/FaveButton';
+import PurpleButton from '../../components/PurpleButton';
 
 const Session = ({
   session,
@@ -52,12 +52,12 @@ const Session = ({
       </View>
       <View style={styles.buttonWrapper}>
         {faveIds.includes(session.id) ? (
-          <FaveButton
+          <PurpleButton
             text="Remove from faves"
             onPress={() => removeFaveSession(session.id)}
           />
         ) : (
-          <FaveButton
+          <PurpleButton
             text="Add to fave sessions"
             onPress={() => addFaveSession(session.id)}
           />

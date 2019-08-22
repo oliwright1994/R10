@@ -10,7 +10,7 @@ import {
   SafeAreaView,
   Linking,
 } from 'react-native';
-import FaveButton from '../../components/FaveButton';
+import PurpleButton from '../../components/PurpleButton';
 
 const Speaker = ({navigation}) => {
   const speaker = navigation.getParam('speaker');
@@ -31,7 +31,7 @@ const Speaker = ({navigation}) => {
         <Image style={styles.speakerPicture} source={{uri: speaker.image}} />
         <Text style={styles.speakerName}>{speaker.name}</Text>
         <Text style={styles.speakerBio}>{speaker.bio}</Text>
-        <FaveButton
+        <PurpleButton
           text="Read more on Wikipedia"
           onPress={() => Linking.openURL(speaker.url)}
         />
