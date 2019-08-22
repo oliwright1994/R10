@@ -10,6 +10,12 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontFamily: theme.fonts.regular,
+
+    left: 0,
+    top: 0,
+  },
+  backButtonButton: {
+    position: 'absolute',
   },
   about: {
     color: 'white',
@@ -24,6 +30,7 @@ const styles = StyleSheet.create({
     width: '100%',
     margin: 15,
     marginBottom: 30,
+    position: 'relative',
   },
   speakerProfile: {
     backgroundColor: 'white',

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles';
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
 
 import theme from '../../config/theme';
 
@@ -12,8 +12,8 @@ const Maps = () => {
       region={{
         latitude: 49.26326812868976,
         longitude: -123.13764485095908,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        latitudeDelta: 0.02,
+        longitudeDelta: 0.02,
       }}>
       <Marker
         image={require('../../assets/images/map_pin.png')}

@@ -19,6 +19,7 @@ const Speaker = ({navigation}) => {
     <SafeAreaView style={styles.root}>
       <View style={styles.topText}>
         <TouchableOpacity
+          style={styles.backButtonButton}
           opacity={0.6}
           onPress={() => {
             navigation.goBack();

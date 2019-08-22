@@ -6,7 +6,11 @@ import {withNavigation} from 'react-navigation';
 import moment from 'moment';
 
 const Faves = ({sessions, navigation, faveIds}) => {
-  return (
+  return faveIds.length === 0 ? (
+    <View style={styles.noFavesWrapper}>
+      <Text style={styles.noFavesText}>No faves yet.</Text>
+    </View>
+  ) : (
     <SectionList
       renderItem={({item, index}) => (
         <SessionCard

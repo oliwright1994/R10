@@ -24,6 +24,17 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     paddingLeft: 10,
   },
+  noFavesText: {
+    fontFamily: theme.fonts.regular,
+    fontSize: 22,
+    color: theme.pallete.mediumGray,
+  },
+  noFavesWrapper: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default styles;
