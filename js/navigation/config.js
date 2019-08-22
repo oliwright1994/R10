@@ -1,8 +1,9 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Platform} from 'react-native';
 import {Header} from 'react-navigation';
 import LinearGradient from 'react-native-linear-gradient';
 import theme from '../config/theme';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const GradientHeader = props => (
   <View style={{backgroundColor: 'white', overflow: 'hidden'}}>
@@ -16,6 +17,18 @@ const GradientHeader = props => (
   </View>
 );
 
+export const MenuButton = ({navigation}) => {
+  return (
+    <Icon
+      style={{paddingLeft: 10}}
+      name="md-menu"
+      size={35}
+      color="white"
+      onPress={navigation.openDrawer}
+    />
+  );
+};
+
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
   header: props => <GradientHeader {...props} />,
@@ -24,4 +37,7 @@ export const sharedNavigationOptions = navigation => ({
     backgroundColor: 'transparent',
   },
   headerTitleStyle: {color: 'white', fontFamily: theme.fonts.regular},
+  ...Platform.select({
+    android: {headerLeft: <MenuButton navigation={navigation} />},
+  }),
 });

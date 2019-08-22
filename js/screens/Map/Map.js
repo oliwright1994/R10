@@ -8,13 +8,13 @@ const Maps = () => {
   return (
     <MapView
       style={styles.map}
+      showsUserLocation={true}
       region={{
         latitude: 49.26326812868976,
         longitude: -123.13764485095908,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
-      }}
-      showsUserLocation={false}>
+      }}>
       <Marker
         image={require('../../assets/images/map_pin.png')}
         coordinate={{
