@@ -16,7 +16,7 @@ const Maps = () => {
       }}
       showsUserLocation={false}>
       <Marker
-        pinColor={theme.pallete.red}
+        image={require('../../assets/images/map_pin.png')}
         coordinate={{
           latitude: 49.26326812868976,
           longitude: -123.13764485095908,
