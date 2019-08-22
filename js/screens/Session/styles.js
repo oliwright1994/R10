@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     borderColor: theme.pallete.lightGray,
     borderTopWidth: 1,
     alignItems: 'center',
+    paddingTop: 20,
   },
   faveIcon: {
     color: theme.pallete.red,

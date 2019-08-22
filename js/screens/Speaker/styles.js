@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
   speakerProfile: {
     backgroundColor: 'white',
     borderRadius: 5,
-    padding: 20,
     alignItems: 'center',
     flex: 1,
     margin: 15,
+    paddingTop: 20,
+    paddingBottom: 20,
   },
   speakerPicture: {
     width: 150,
@@ -42,12 +43,12 @@ const styles = StyleSheet.create({
   speakerName: {
     fontSize: 28,
     fontFamily: theme.fonts.regular,
-    marginBottom: 20,
   },
   speakerBio: {
     fontFamily: theme.fonts.light,
     fontSize: 18,
     lineHeight: 22,
+    margin: 20,
   },
 });
 

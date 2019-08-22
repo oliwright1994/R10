@@ -4,7 +4,6 @@ import theme from '../../config/theme';
 const styles = StyleSheet.create({
   button: {
     borderRadius: 35,
-    margin: 30,
     overflow: 'hidden',
     display: 'flex',
   },
@@ -14,6 +13,8 @@ const styles = StyleSheet.create({
     fontFamily: theme.fonts.regular,
     textAlign: 'center',
     padding: 20,
+    paddingTop: 15,
+    paddingBottom: 15,
   },
   gradient: {
     position: 'absolute',
