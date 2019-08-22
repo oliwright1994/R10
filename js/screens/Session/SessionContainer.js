@@ -28,7 +28,7 @@ class SessionContainer extends Component {
       session.speaker && session.speaker.id ? session.speaker.id : undefined;
     return (
       <FavesContext.Consumer>
-        {context =>
+        {({faveIds, addFaveSession, removeFaveSession}) =>
           speakerId ? (
             <Query query={SPEAKER} variables={{id: speakerId}}>
               {({loading, error, data}) => {
@@ -38,14 +38,13 @@ class SessionContainer extends Component {
                 if (error) {
                   return <Text>{error}</Text>;
                 }
-                console.log(context);
                 return (
                   <Session
                     session={session}
-                    addFaveSession={context.addFaveSession}
-                    removeFaveSession={context.removeFaveSession}
+                    addFaveSession={addFaveSession}
+                    removeFaveSession={removeFaveSession}
                     speaker={data.Speaker}
-                    add
+                    faveIds={faveIds}
                   />
                 );
               }}
@@ -53,9 +52,9 @@ class SessionContainer extends Component {
           ) : (
             <Session
               session={session}
-              addFaveSession={context.addFaveSession}
-              removeFaveSession={context.removeFaveSession}
-              add
+              addFaveSession={addFaveSession}
+              removeFaveSession={removeFaveSession}
+              faveIds={faveIds}
             />
           )
         }

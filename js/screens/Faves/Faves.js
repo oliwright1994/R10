@@ -4,11 +4,16 @@ import {Text, SectionList, View} from 'react-native';
 import SessionCard from '../../components/SessionCard';
 import {withNavigation} from 'react-navigation';
 
-const Faves = ({sessions, navigation}) => {
+const Faves = ({sessions, navigation, faveIds}) => {
   return (
     <SectionList
       renderItem={({item, index}) => (
-        <SessionCard item={item} index={index} navigation={navigation} />
+        <SessionCard
+          item={item}
+          index={index}
+          navigation={navigation}
+          faveIds={faveIds}
+        />
       )}
       renderSectionHeader={({section: {title}}) => (
         <Text style={styles.heading}>

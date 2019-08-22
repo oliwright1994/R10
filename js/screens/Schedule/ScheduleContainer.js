@@ -39,13 +39,11 @@ class ScheduleContainer extends Component {
               if (error) {
                 return <Text>{error}</Text>;
               }
-              data.allSessions.forEach(session => {
-                session.fave = faveIds.includes(session.id);
-              });
               return (
                 <Schedule
                   navigation={this.props.navigation}
                   sessions={formatSessionData(data.allSessions)}
+                  faveIds={faveIds}
                 />
               );
             }}

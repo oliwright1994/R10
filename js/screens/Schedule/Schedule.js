@@ -4,12 +4,17 @@ import {Text, SectionList, View} from 'react-native';
 import SessionCard from '../../components/SessionCard';
 import {withNavigation} from 'react-navigation';
 
-const Schedule = ({sessions, navigation}) => {
+const Schedule = ({sessions, navigation, faveIds}) => {
   console.log(sessions);
   return (
     <SectionList
       renderItem={({item, index}) => (
-        <SessionCard item={item} index={index} navigation={navigation} />
+        <SessionCard
+          faveIds={faveIds}
+          item={item}
+          index={index}
+          navigation={navigation}
+        />
       )}
       renderSectionHeader={({section: {title}}) => (
         <Text style={styles.heading}>

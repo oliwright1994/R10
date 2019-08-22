@@ -11,6 +11,7 @@ const Session = ({
   navigation,
   addFaveSession,
   removeFaveSession,
+  faveIds,
 }) => {
   let IconComponent = Ionicons;
   return (
@@ -18,7 +19,7 @@ const Session = ({
       <View style={styles.sessionWrapper}>
         <View style={styles.topText}>
           <Text style={styles.location}>{session.location}</Text>
-          {session.fave ? (
+          {faveIds.includes(session.id) ? (
             <IconComponent name="md-heart" size={18} style={styles.faveIcon} />
           ) : null}
         </View>
@@ -50,7 +51,7 @@ const Session = ({
         ) : null}
       </View>
       <View style={styles.buttonWrapper}>
-        {session.fave ? (
+        {faveIds.includes(session.id) ? (
           <FaveButton
             text="Remove from faves"
             onPress={() => removeFaveSession(session.id)}

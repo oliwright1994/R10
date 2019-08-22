@@ -31,7 +31,7 @@ export default class FavesContainer extends Component {
   render() {
     return (
       <FavesContext.Consumer>
-        {context => (
+        {({faveIds}) => (
           <Query query={ALL_SESSIONS}>
             {({loading, error, data}) => {
               if (loading) {
@@ -40,11 +40,15 @@ export default class FavesContainer extends Component {
               if (error) {
                 return <Text>{error}</Text>;
               }
-              console.log(data);
-              const faveSessions = data.allSessions.filter(session =>
-                context.faveIds.includes(session.id),
+              const favedSessions = data.allSessions.filter(session =>
+                faveIds.includes(session.id),
               );
-              return <Faves sessions={formatSessionData(faveSessions)} />;
+              return (
+                <Faves
+                  sessions={formatSessionData(favedSessions)}
+                  faveIds={faveIds}
+                />
+              );
             }}
           </Query>
         )}

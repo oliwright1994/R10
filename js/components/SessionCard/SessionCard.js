@@ -4,7 +4,7 @@ import styles from './styles';
 import {withNavigation} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const SessionCard = ({item, navigation}) => {
+const SessionCard = ({item, navigation, faveIds}) => {
   let IconComponent = Ionicons;
 
   return (
@@ -16,7 +16,7 @@ const SessionCard = ({item, navigation}) => {
       <Text style={styles.title}>{item.title}</Text>
       <View style={styles.botText}>
         <Text style={styles.location}>{item.location}</Text>
-        {item.fave ? (
+        {faveIds.includes(item.id) ? (
           <IconComponent name="md-heart" size={18} style={styles.faveIcon} />
         ) : null}
       </View>

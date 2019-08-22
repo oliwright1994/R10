@@ -41,8 +41,6 @@ class FavesProvider extends Component {
   render() {
     return (
       <FavesContext.Provider
-        addFaveSession={this.addFaveSession}
-        removeFaveSession={this.removeFaveSession}
         value={{
           ...this.state,
           removeFaveSession: this.removeFaveSession,
