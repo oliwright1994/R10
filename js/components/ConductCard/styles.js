@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: theme.fonts.light,
   },
+  touchableHeading: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });
 
 export default styles;

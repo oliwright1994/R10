@@ -10,12 +10,13 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontFamily: theme.fonts.regular,
-
+    zIndex: 100,
     left: 0,
     top: 0,
   },
   backButtonButton: {
     position: 'absolute',
+    zIndex: 200,
   },
   about: {
     color: 'white',

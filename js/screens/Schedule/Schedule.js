@@ -7,6 +7,7 @@ import moment from 'moment';
 
 const Schedule = ({sessions, navigation, faveIds}) => {
   console.log(sessions);
+
   return (
     <SectionList
       renderItem={({item, index}) => (
