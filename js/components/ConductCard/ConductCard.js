@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Animated, TouchableOpacity, Easing} from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import PropTypes from 'prop-types';
 
 export default class ConductCard extends React.Component {
   constructor(props) {
@@ -9,18 +10,12 @@ export default class ConductCard extends React.Component {
     this.state = {
       open: false,
     };
-    this.heightValue = new Animated.Value(0);
+
     this.spinValue = new Animated.Value(0);
   }
   show = () => {
-    this.heightValue.setValue(0);
     this.spinValue.setValue(0);
     this.setState({open: !this.state.open});
-    const showTextAnimation = this.createAnimation(this.heightValue, {
-      toValue: 1,
-      duration: 300,
-      easing: Easing.linear,
-    });
     const spinTextAnimation = this.createAnimation(this.spinValue, {
       toValue: 1,
       duration: 300,
@@ -39,10 +34,6 @@ export default class ConductCard extends React.Component {
     const spin = this.spinValue.interpolate({
       inputRange: [0, 1],
       outputRange: ['0deg', '360deg'],
-    });
-    const height = this.heightValue.interpolate({
-      inputRange: [0, 1],
-      outputRange: [0, 1],
     });
     const show = this.state.open ? 'flex' : 'none';
     return (
@@ -70,3 +61,10 @@ export default class ConductCard extends React.Component {
     );
   }
 }
+
+ConductCard.propTypes = {
+  conduct: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+};

@@ -1,6 +1,6 @@
 import React from 'react';
 import theme from '../../config/theme';
-
+import PropTypes from 'prop-types';
 import {TouchableOpacity, Text, View, StyleSheet} from 'react-native';
 import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
@@ -20,3 +20,8 @@ const PurpleButton = ({text, onPress}) => {
 };
 
 export default PurpleButton;
+
+PurpleButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+};

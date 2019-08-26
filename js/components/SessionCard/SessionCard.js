@@ -3,6 +3,7 @@ import {TouchableOpacity, Text, View, Platform} from 'react-native';
 import styles from './styles';
 import {withNavigation} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import PropTypes from 'prop-types';
 
 const SessionCard = ({item, navigation, faveIds}) => {
   let IconComponent = Ionicons;
@@ -29,3 +30,18 @@ const SessionCard = ({item, navigation, faveIds}) => {
 };
 
 export default withNavigation(SessionCard);
+
+SessionCard.propTypes = {
+  item: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    speaker: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.arrayOf(PropTypes.string.isRequired),
+};

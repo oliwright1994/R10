@@ -11,10 +11,11 @@ import {
   Linking,
 } from 'react-native';
 import PurpleButton from '../../components/PurpleButton';
+import PropTypes from 'prop-types';
 
 const Speaker = ({navigation}) => {
   const speaker = navigation.getParam('speaker');
-  console.log(speaker);
+
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.topText}>
@@ -42,3 +43,19 @@ const Speaker = ({navigation}) => {
 };
 
 export default withNavigation(Speaker);
+
+Speaker.propTypes = {
+  navigation: PropTypes.shape({
+    state: PropTypes.shape({
+      params: PropTypes.shape({
+        speaker: PropTypes.shape({
+          bio: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+          image: PropTypes.string.isRequired,
+          name: PropTypes.string.isRequired,
+          url: PropTypes.string.isRequired,
+        }),
+      }),
+    }),
+  }),
+};

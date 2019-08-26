@@ -2,9 +2,9 @@ import React from 'react';
 import {Text, ScrollView, Image, View} from 'react-native';
 import ConductCard from '../../components/ConductCard';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const About = ({allConducts}) => {
-  console.log(allConducts);
   return (
     <ScrollView style={styles.root}>
       <View style={styles.logoWrapper}>
@@ -28,3 +28,13 @@ const About = ({allConducts}) => {
 };
 
 export default About;
+
+About.propTypes = {
+  allConducts: PropTypes.arrayOf(
+    PropTypes.shape({
+      description: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ),
+};

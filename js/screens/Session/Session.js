@@ -12,6 +12,7 @@ import {withNavigation} from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PurpleButton from '../../components/PurpleButton';
 import moment from 'moment';
+import PropTypes from 'prop-types';
 
 const Session = ({
   session,
@@ -78,3 +79,27 @@ const Session = ({
 };
 
 export default withNavigation(Session);
+
+Session.propTypes = {
+  item: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    speaker: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }),
+  }),
+  speaker: PropTypes.shape({
+    bio: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }),
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.arrayOf(PropTypes.string.isRequired),
+  addFaveSession: PropTypes.func.isRequired,
+  removeFaveSession: PropTypes.func.isRequired,
+};
