@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Schedule from './Schedule';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import {Query} from '@apollo/react-components';
 import {gql} from 'apollo-boost';
 import formatSessionData from '../../lib/helpers/formatSessionData';
 import Loader from '../../components/Loader';
-import styles from './styles';
+
 import {withNavigation} from 'react-navigation';
 import FavesContext from '../../context/FavesContext';
 

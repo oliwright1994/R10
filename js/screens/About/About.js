@@ -10,7 +10,6 @@ const About = ({allConducts}) => {
       <View style={styles.logoWrapper}>
         <Image source={require('../../assets/images/r10_logo.png')} />
       </View>
-
       <Text style={styles.descriptionText}>
         R10 is a conference that focuses on just about any topic related to dev.
       </Text>
@@ -23,6 +22,8 @@ const About = ({allConducts}) => {
       {allConducts.map(conduct => {
         return <ConductCard conduct={conduct} key={conduct.id} />;
       })}
+      <View style={styles.divider} />
+      <Text style={styles.footerText}>Ⓒ RED Academy 2017</Text>
     </ScrollView>
   );
 };

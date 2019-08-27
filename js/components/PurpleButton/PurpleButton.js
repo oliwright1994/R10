@@ -1,7 +1,7 @@
 import React from 'react';
 import theme from '../../config/theme';
 import PropTypes from 'prop-types';
-import {TouchableOpacity, Text, View, StyleSheet} from 'react-native';
+import {TouchableOpacity, Text} from 'react-native';
 import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 

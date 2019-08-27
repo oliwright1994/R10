@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import the Realm helpers you just created here
 const FavesContext = React.createContext();
 import {createFave, deleteFave, queryFaves} from '../../config/models';
 

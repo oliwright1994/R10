@@ -2,8 +2,6 @@ import React from 'react';
 import styles from './styles';
 import MapView, {Marker} from 'react-native-maps';
 
-import theme from '../../config/theme';
-
 const Maps = () => {
   return (
     <MapView

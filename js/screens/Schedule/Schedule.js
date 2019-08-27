@@ -7,6 +7,7 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 const Schedule = ({sessions, navigation, faveIds}) => {
+  console.log(navigation);
   return (
     <SectionList
       renderItem={({item, index}) => (

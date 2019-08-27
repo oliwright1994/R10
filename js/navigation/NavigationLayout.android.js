@@ -1,5 +1,9 @@
 import React from 'react';
-import {createStackNavigator, createDrawerNavigator} from 'react-navigation';
+import {
+  createStackNavigator,
+  createDrawerNavigator,
+  BackHandler,
+} from 'react-navigation';
 import AboutScreen from '../screens/About';
 import MapScreen from '../screens/Map';
 import ScheduleScreen from '../screens/Schedule';

@@ -25,6 +25,18 @@ const styles = StyleSheet.create({
     borderBottomColor: theme.pallete.lightGray,
     borderBottomWidth: 1,
   },
+  footerText: {
+    fontSize: 18,
+    paddingTop: 10,
+    paddingBottom: 10,
+    marginBottom: 20,
+    fontFamily: theme.fonts.light,
+  },
+  divider: {
+    borderBottomColor: theme.pallete.lightGray,
+    borderBottomWidth: 1,
+    marginBottom: 10,
+  },
 });
 
 export default styles;

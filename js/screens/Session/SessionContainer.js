@@ -22,10 +22,14 @@ const SPEAKER = gql`
 `;
 
 class SessionContainer extends Component {
+  static navigationOptions = {
+    title: 'Session',
+  };
   render() {
     const session = this.props.navigation.getParam('item');
     const speakerId =
       session.speaker && session.speaker.id ? session.speaker.id : undefined;
+
     return (
       <FavesContext.Consumer>
         {({faveIds, addFaveSession, removeFaveSession}) =>
