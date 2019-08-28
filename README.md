@@ -28,22 +28,23 @@ When the virtual device is started, shell into the project root directory and ru
 
 `react-native run-android`
 
+### Android Map
+
+To aces the google maps api on android you will need to add a Maps for Android SDK api key to the `android:value` property at `/android/app/src/main/AndroidManifest.xml` under the `meta-data` tag
+
 ## Screenshots
 
 ### Schedule
 
 <img src="./docs/schedule.png" width="400" height="800"/>
 
-
 ### Single Session
 
 <img src="./docs/session.png" width="400" height="800"/>
 
-
 ### Speaker
 
 <img src="./docs/speaker.png" width="400" height="800"/>
-
 
 ### Map
 
