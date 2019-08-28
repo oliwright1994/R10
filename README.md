@@ -27,3 +27,34 @@ To run on android download the latest release of Java from the Oracle home websi
 When the virtual device is started, shell into the project root directory and run :
 
 `react-native run-android`
+
+## Screenshots
+
+### Schedule
+
+![Schedule screen image](./docs/schedule.png)
+
+### Single Session
+
+![Session screen image](./docs/session.png)
+
+### Speaker
+
+![Speaker screen image](./docs/speaker.png)
+
+### Map
+
+![Map screen image](./docs/map.png)
+
+### Faves
+
+![Faves screen image](./docs/faves.png)
+
+### About
+
+![About screen image](./docs/about.png)
+
+## Author
+
+Oliver Wright
+[GitHub](https://github.com/oliwright1994)
