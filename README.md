@@ -32,27 +32,30 @@ When the virtual device is started, shell into the project root directory and ru
 
 ### Schedule
 
-![Schedule screen image](./docs/schedule.png)
+<img src="./docs/schedule.png" width="400" height="800"/>
+
 
 ### Single Session
 
-![Session screen image](./docs/session.png)
+<img src="./docs/session.png" width="400" height="800"/>
+
 
 ### Speaker
 
-![Speaker screen image](./docs/speaker.png)
+<img src="./docs/speaker.png" width="400" height="800"/>
+
 
 ### Map
 
-![Map screen image](./docs/map.png)
+<img src="./docs/map.png" width="400" height="800"/>
 
 ### Faves
 
-![Faves screen image](./docs/faves.png)
+<img src="./docs/faves.png" width="400" height="800"/>
 
 ### About
 
-![About screen image](./docs/about.png)
+<img src="./docs/about.png" width="400" height="800"/>
 
 ## Author
 
